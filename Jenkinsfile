@@ -20,5 +20,16 @@ pipeline {
                 '''
             }
         }
+
+        stage('Test') {
+            
+            steps {
+                sh '''
+                    echo "Testing the pipeline ....."
+                    grep "index.html" build
+                    npm test
+                '''
+            }
+        }
     }
 }
