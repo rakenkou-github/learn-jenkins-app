@@ -3,17 +3,30 @@ pipeline {
 
     stages {
         
-        stage('Without Docker') {
+        stage('Build') {
+            
+            agent {
+                
+                docker {
+                    image 'node:18-alpine'
+                    reuseNode true
+                }
+            }
+
             steps {
                 cleanWs()
                 sh '''
-                    echo "Without Docker"
-                    touch configure-no.txt
+                    ls -la
+                    node --version
+                    npm --version
+                    npm ci
+                    npm run build
                     ls -la
                 '''
             }
         }
         
+        /*
         stage('With Docker') {
             
             agent {
@@ -33,5 +46,6 @@ pipeline {
                 '''
             }
         }
+        */
     }
 }
