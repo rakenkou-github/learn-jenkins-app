@@ -26,9 +26,9 @@ pipeline {
             }
         }
         
-        /*
-        stage('With Docker') {
-            
+        
+        stage('Test') {
+            /*
             agent {
                 
                 docker {
@@ -36,16 +36,14 @@ pipeline {
                     reuseNode true
                 }
             }
-            
+            */
             steps {
-                echo "With Docker"
+                echo "Test Stage"
                 sh '''
-                    node --version
-                    touch configure-yes.txt
                     ls -la
                 '''
             }
         }
-        */
+        
     }
 }
