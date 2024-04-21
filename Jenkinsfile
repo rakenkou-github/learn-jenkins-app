@@ -26,25 +26,32 @@ pipeline {
             }
         }
         
-        
-        stage('Test') {
-            
-            agent {
-                
-                docker {
-                    image 'node:18-alpine'
-                    reuseNode true
+        stage('Parallel Stages') {
+
+            parallel {
+
+
+                stage('Test-01') {
+                    
+                    steps {
+                        sh '''
+                            echo "Test Stage-01
+                        '''
+                    }
                 }
-            }
-            
-            steps {
-                //echo "Test Stage"
-                sh '''
-                    test -f build/index.html
-                    npm test
-                '''
+
+                stage('Test-02') {
+                    
+                    steps {
+                        sh '''
+                            echo "Test Stage-02
+                        '''
+                    }
+                }
+
             }
         }
+        
         
     }
 }
