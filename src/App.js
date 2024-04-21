@@ -12,7 +12,8 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn Jenkins on Udemy . Deployment on Netlify
+          Learn Jenkins on Udemy . Deployment on Netlify 
+          v.2024.04.20.12.28.00
         </a>
       </header>
       <p>
