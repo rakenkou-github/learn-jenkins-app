@@ -38,9 +38,9 @@ pipeline {
             }
             */
             steps {
-                echo "Test Stage"
+                //echo "Test Stage"
                 sh '''
-                    ls -la
+                    sh 'test -f build/index.html'
                 '''
             }
         }
