@@ -35,7 +35,7 @@ pipeline {
                     
                     steps {
                         sh '''
-                            echo "Test Stage-01
+                            echo "Test Stage-01"
                         '''
                     }
                 }
@@ -44,7 +44,7 @@ pipeline {
                     
                     steps {
                         sh '''
-                            echo "Test Stage-02
+                            echo "Test Stage-02"
                         '''
                     }
                 }
